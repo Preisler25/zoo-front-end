@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         selected = target.textContent!;
 
         try {
-          const filtered = animals.animals.filter(
+          const filtered = animals.filter(
             (animal) => animal.species === selected
           );
           HTMLHelper.populateAnimalTable(selectedRow, animalTemplate, filtered);
@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    HTMLHelper.populateAnimalTable(animalsRow, animalTemplate, animals.animals);
+    HTMLHelper.populateAnimalTable(animalsRow, animalTemplate, animals);
     HTMLHelper.populateSpeciesTable(
       speciesRow,
       speciesTemplate,
-      species.species
+      species
     );
   } catch (error) {
     console.error("Error fetching data:", error);
