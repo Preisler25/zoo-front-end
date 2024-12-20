@@ -4,7 +4,7 @@ import { IAnimal } from "../interfaces/animals.ts";
 import { IAnimalsBySpecies } from "../interfaces/species.ts";
 
 export class FetchHelper {
-  static async fetchAnimals(): Promise<{ animals: IAnimal[] }> {
+  static async fetchAnimals(): Promise<IAnimal[]> {
     const response = await axios.get<{ animals: IAnimal[] }>(
       `${ENDPOINTS.ANIMALS}`
     );
@@ -14,7 +14,7 @@ export class FetchHelper {
   static async fetchAnimalsBySpecies(): Promise<{
     species: IAnimalsBySpecies[];
   }> {
-    const response = await axios.get<{ species: IAnimalsBySpecies[] }>(
+    const response = await axios.get<IAnimalsBySpecies[]>(
       `${ENDPOINTS.ANIMALS_BY_SPECIES}`
     );
     return response.data;
