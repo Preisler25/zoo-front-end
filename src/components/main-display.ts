@@ -62,4 +62,3 @@ export const appHTML = `
   </template>
 </div>
 `;
-
